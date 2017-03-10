@@ -24,6 +24,9 @@ for i in range(10):
 	get_page()
 driver.quit()
 
-thoughts_str = " ".join(thoughts)
+
+# Please check if there's a 3-second pause between thoughts
+thoughts_str = " [[slnc 3000]] ".join(thoughts)
+# thoughts_str = " ".join(thoughts)
 command = "say -v Alex \"%s\" -o shower.aiff" % 
 os.system(command)
