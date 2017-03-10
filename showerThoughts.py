@@ -1,10 +1,10 @@
 from selenium import webdriver
 import time 
+import os
 
 driver = webdriver.Firefox()
 
 url = 'https://www.reddit.com/r/Showerthoughts/'
-
 thoughts = []
 
 def get_page():
@@ -22,6 +22,8 @@ def get_page():
 driver.get(url)
 for i in range(10):
 	get_page()
-
-print thoughts
 driver.quit()
+
+for thought in thoughts:
+	command = "say -v Alex \"%s\"" % thought
+	os.system(command)
