@@ -14,7 +14,7 @@ def get_page():
 
 	for title in titles:
 		# print title.text
-		thoughts.append(title.text)
+		thoughts.append(title.text.encode('utf-8'))
 
 	driver.find_element_by_css_selector('span.next-button').click()
 
