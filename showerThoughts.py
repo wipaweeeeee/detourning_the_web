@@ -24,6 +24,6 @@ for i in range(10):
 	get_page()
 driver.quit()
 
-for thought in thoughts:
-	command = "say -v Alex \"%s\"" % thought
-	os.system(command)
+thoughts_str = " ".join(thoughts)
+command = "say -v Alex \"%s\" -o shower.aiff" % 
+os.system(command)
