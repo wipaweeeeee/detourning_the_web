@@ -8,7 +8,7 @@ url = 'https://www.reddit.com/r/Showerthoughts/'
 thoughts_arr = []
 
 def get_page():
-	time.sleep(2)
+        time.sleep(2)
 	titles = driver.find_elements_by_css_selector('a.title')
 
 	for title in titles:
@@ -17,14 +17,16 @@ def get_page():
 	driver.find_element_by_css_selector('span.next-button').click()
 
 driver.get(url)
+
 for i in range(10):
 	get_page()
+        
 driver.quit()
 
 
-# Please check if there's a 3-second pause between thoughts.
-# If script doesn't run, delete line 27 and uncomment 28.
 thoughts_str = " [[slnc 3000]] ".join(thoughts_arr)
-# thoughts_str = " ".join(thoughts)
-command = "say -v Alex \"%s\" -o shower.aiff" % 
+thoughts_str_clean = thoughts_str.replace("'", " ") # Look, I can explain...
+
+# You should consider naming the file as <today's date>.aiff
+command = "say -v Tessa \"%s\" -o shower.aiff" % thoughts_str_clean
 os.system(command)
