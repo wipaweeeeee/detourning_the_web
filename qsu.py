@@ -69,7 +69,7 @@ def check_git():
 def main():
     check_homebrew()
     check_emacs()
-    
+    check_git()
         
         
  if __name__ == "__main__":
